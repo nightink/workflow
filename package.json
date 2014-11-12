@@ -13,12 +13,18 @@
   },
   "dependencies": {
     "commander": "~2.3.0",
-    "gulp": "*",
-    "iconv-lite": "*"
+    "iconv-lite": "~0.4.4",
+     "gulp": "~3.8.10",
+     "gulp-util": "~3.0.1",
+     "gulp-jshint": "~1.9.0",
+     "glob": "*",
+     "debug": "*"
   },
   "devDependencies": {
     "mocha": "*",
-    "should": "*"
-  },
+    "should": "*",
+    "jshint": "~2.5.0",
+    "through2": "~0.6.3"
+ },
   "main": "index.js"
 }
