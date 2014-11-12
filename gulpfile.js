@@ -3,6 +3,8 @@
 var program = require('commander');
 var gulp = require('gulp');
 var jshint = require('gulp-jshint');
+var less = require('gulp-less');
+var glob = require('glob');
 var gulpCharset = require('./lib/gulp-charset-transform');
 
 program
@@ -12,11 +14,10 @@ program
 
 var paths = {
   script: './project/**/*.js',
+  style: './project/**/*.less',
   dist: program.path || './build',
   jshintrc: __dirname + '/.jshintrc'
 };
-
-console.log(program)
 
 gulp.task('lint', function() {
   var jshintOpts = {
@@ -29,7 +30,15 @@ gulp.task('lint', function() {
     .pipe(jshint.reporter('default'));
 });
 
-gulp.task('build', function() {
+gulp.task('less', function() {
+  gulp.src(paths.style)
+    .pipe(less({
+      paths: glob.sync(paths.style)
+    }))
+    .pipe(gulp.dest(paths.dist));
+});
+
+gulp.task('script', function() {
   gulp.src(paths.script)
     .pipe(gulpCharset({
       encoding: program.encoding
@@ -37,8 +46,10 @@ gulp.task('build', function() {
     .pipe(gulp.dest(paths.dist));
 });
 
+gulp.task('build', ['less', 'script']);
+
 gulp.task('watch', function() {
-  gulp.watch(paths.script, ['lint', 'build']);
+  gulp.watch([paths.script, paths.style], ['lint', 'build']);
 });
 
 gulp.task('default', ['lint', 'build', 'watch']);
