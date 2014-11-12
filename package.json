@@ -1,0 +1,24 @@
+{
+  "name": "workflow",
+  "version": "0.0.1",
+  "description": "my workflow",
+  "keywords": ["workflow", "gulp"],
+  "author": "Nightink<chceyes@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Nightink/workflow.git" 
+  },
+  "bin": {
+    "wf": "index.js"
+  },
+  "dependencies": {
+    "commander": "~2.3.0",
+    "gulp": "*",
+    "iconv-lite": "*"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "should": "*"
+  },
+  "main": "index.js"
+}
