@@ -3,10 +3,10 @@
   "version": "0.0.1",
   "description": "my workflow",
   "keywords": ["workflow", "gulp"],
-  "author": "Nightink<chceyes@gmail.com>",
+  "author": "nightink<chceyes@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "git://github.com/Nightink/workflow.git" 
+    "url": "git://github.com/nightink/workflow.git"
   },
   "bin": {
     "wf": "index.js"
@@ -14,12 +14,12 @@
   "dependencies": {
     "commander": "~2.3.0",
     "iconv-lite": "~0.4.4",
-     "gulp": "~3.8.10",
-     "gulp-util": "~3.0.1",
-     "gulp-jshint": "~1.9.0",
-     "gulp-less": "1.3.6",
-     "glob": "*",
-     "debug": "*"
+    "gulp": "~3.8.10",
+    "gulp-util": "~3.0.1",
+    "gulp-jshint": "~1.9.0",
+    "gulp-less": "1.3.6",
+    "glob": "*",
+    "debug": "*"
   },
   "devDependencies": {
     "mocha": "*",
